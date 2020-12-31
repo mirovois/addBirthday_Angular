@@ -1,0 +1,41 @@
+header {
+  background: cadetblue;
+  padding: 1em 0;
+  text-align: center;
+}
+form {
+  max-width: 35em;
+  margin: 1em auto;
+  position: relative;
+  background: #c0e0df;
+  padding: 1em 2em;
+}
+form input[type="text"]::placeholder {
+  color: rgb(190, 178, 178);
+}
+.input-group-text {
+  cursor: pointer;
+}
+
+.data {
+  margin-top: 1em;
+}
+.data li {
+  background: rgb(160, 152, 152);
+  border-left: 4px solid #f97300;
+  padding: 1em;
+  margin: 1em auto;
+  color: rgb(66, 62, 62);
+  list-style-type: none;
+  display: flex;
+}
+.data li > * {
+  flex-basis: 100%;
+}
+
+.data li i {
+  /* float: right; */
+  color: rgb(68, 62, 62);
+  cursor: pointer;
+  flex: 1 1 20%;
+}

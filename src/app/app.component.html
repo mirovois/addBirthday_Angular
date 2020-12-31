@@ -1,0 +1,38 @@
+<header>
+        <h1>Birthday App</h1>
+</header>
+
+
+<div class="container">
+        <form #contactForm="ngForm" class="form-group" (ngSubmit)="addContact(contactForm)" novalidate>
+                <h2 class="text-center text-secondary">Person's contacts</h2>
+                <label>Full Name</label>
+                <div class="input-group-prepend">
+                        <input #bname 
+                        #firstname="ngModel"
+                        type="text" class="form-control"
+                        placeholder="Enter name..." name="name" required [(ngModel)]="name"
+                        >
+                        <span class="input-group-text" (click)="addBday(bday.value)">Add</span>
+                </div>
+                <p>{{birthday}}</p>
+                <label>Date of Birth</label>
+                <div class="input-group-prepend">
+                        <input #date type="date" class="form-control"
+                        name="bdate" required [(ngModel)]="bdate"
+                        >
+                        <span class="input-group-text" (click)="addBday(bday.value)">Add</span>
+                </div>
+                <button type="submit" [disabled]="!contactForm.valid" class="btn btn-primary">Submit</button>
+        </form>
+
+        <div class="data">
+                <ul class="list-instyled">
+                        <li *ngFor="let contact of contacts">
+                        <span>{{contact.name}}</span>
+                        <span>{{contact.bdate}}</span>
+                        <i (click)="deleteContact(contact.name)" class="material-icons">delete</i>                      
+                        </li>
+                </ul>
+        </div>
+</div>

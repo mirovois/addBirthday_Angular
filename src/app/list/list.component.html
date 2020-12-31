@@ -1,0 +1,31 @@
+<p>Languages to master</p>
+<!-- <div><span>id:</span>{{item.id}}</div>
+<div>
+    <label>name:
+        <input [(ngModel)]="item.name" placeholder="name"/>
+    </label>
+</div> -->
+
+<ul class="items">
+    <li *ngFor="let item of items"
+    (click)="onSelect(item)"
+    >
+    <!-- [class.selected]="item === selectedItem" -->
+        <span class="item">{{item.id}}</span>
+        {{item.name}}
+</li>
+</ul>
+
+<div *ngIf="selectedItem">
+    <h2>{{selectedItem.name | uppercase}} Details</h2>
+    <div><span>ID:</span>
+        {{selectedItem.id}}
+    </div>
+    <div>
+        <label>
+            Name:
+            <input [(ngModel)]="selectedItem.name" placeholder="="name/>
+        </label>
+    </div>
+
+</div>
